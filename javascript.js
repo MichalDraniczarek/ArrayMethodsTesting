@@ -1,24 +1,23 @@
 
 
 const baseTab = [];
+const arrayMaxLenght = 50;
+const arrayMaxNumValue = 50;
+
+const arrayGenOfPrimeNumbers = [];
+
+let randTabElements = randomlyGeneratedNumber(arrayMaxLenght);
+let genTabWithPrimeNumbers = genPrimeNumbers(arrayGenOfPrimeNumbers, arrayMaxNumValue);
+
+createRandArrayWithXCells(baseTab, randTabElements,arrayMaxNumValue);
+console.log("nieposotowana tablica: " + baseTab);
 
 
-// const randTabElements =  Math.floor(Math.random() * (101));
-// console.log(randTabElements);
+bubbleSortArray(baseTab, randTabElements);
+console.log("posortowana tablica: " + baseTab);
 
 
-createRandArrayWithXCells(baseTab);
-
-for(let i = 0 ; i < baseTab.length ; i++)
-{
-    console.log(baseTab[i]);
-}
-
-bubbleSortArray(baseTab);
 
 
-// for(let i = 0 ; i < baseTab.length ; i++)
-// {
-//     console.log("bubble sort: " + baseTab[i]);
-// }
+
 

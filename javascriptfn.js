@@ -1,43 +1,56 @@
-
-
-
-
-function createRandArrayWithXCells(tab)
+//Randomly generated lenght of array
+function randomlyGeneratedNumber(arrayMaxLenght)
 {
-    const randTabElements =  Math.floor(Math.random() * (5)+1);
+    let randTabElements =  Math.floor(Math.random() * (arrayMaxLenght)+1);
+
+    return randTabElements;
+}
+
+//Randomly generated array with max lenght
+function createRandArrayWithXCells(tab, randTabElements, arrayMaxNumValue)
+{
+    
     console.log("rand: " + randTabElements);
-
-    for(let i = 0 ; i < randTabElements ; i++)
-    {
-        const randTabValue =  Math.floor(Math.random() * (101));
-        tab.push(randTabValue);
-        //console.log(tab[i]);
-    }
-
-    //return tab;
+   
+        for(let i = 0 ; i < randTabElements ; i++)
+        {
+            const randTabValue =  Math.floor(Math.random() * (arrayMaxNumValue) + 1);
+            tab.push(randTabValue);
+        }
+        
+    return randTabElements;
 }
 
 
-
-function bubbleSortArray(tab)
+//Sort array with "Bubble Sort" method
+function bubbleSortArray(tab, randTabElements)
 {
-   
-    for(let i = 0; i < tab.length ; i++ )
-        {
+    let counter = 0;
+    for(let j = 0; j < randTabElements; j++)
+    {
+        
+        for(let i = 0; i < tab.length - counter ; i++ )
+            {
            
-            if(tab[i] > tab[i + 1])
-                {
+                if(tab[i] > tab[i + 1])
+                    {
                     let x = tab[i];
                     tab[i] = tab[i+1];
                     tab[i+1] = x;  
-                }
-        }
-        
-    for(let i = 0 ; i < tab.length ; i++)
-    {
-        console.log("l: " + tab[i]);
-    }
-
-        
+                    }
+            
+            }
+        counter++;
+    }  
+    console.log("counter: " + counter);
 }
+
+
+
+function genPrimeNumbers(tab, max)
+{
+
+}
+
+
 
