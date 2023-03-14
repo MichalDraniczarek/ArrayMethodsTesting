@@ -26,6 +26,7 @@ function createRandArrayWithXCells(tab, randTabElements, arrayMaxNumValue)
 function bubbleSortArray(tab, randTabElements)
 {
     let counter = 0;
+    //let counter1 = 0;
     for(let j = 0; j < randTabElements; j++)
     {
         
@@ -38,18 +39,36 @@ function bubbleSortArray(tab, randTabElements)
                     tab[i] = tab[i+1];
                     tab[i+1] = x;  
                     }
-            
+            //counter1++;
             }
         counter++;
     }  
-    console.log("counter: " + counter);
+    //console.log("counter: " + counter);
+    //console.log("counter1: " + counter1);
 }
 
 
 
 function genPrimeNumbers(tab, max)
 {
+    for(let i = 1; i < max ; i++)
+    {
+        let divider = 0;
+        for(let j = 1; j <= i; j++)
+        {
+            if( i % j == 0)
+            {
+                divider++;
+            }
+        }
+        if(divider <= 2)
+        {
+            tab.push(i);
+        }
+    }
+    console.log("Liczby pierwsze: " + tab);
 
+    return tab;
 }
 
 
