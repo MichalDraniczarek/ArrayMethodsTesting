@@ -26,7 +26,7 @@ function createRandArrayWithXCells(tab, randTabElements, arrayMaxNumValue)
 function bubbleSortArray(tab, randTabElements)
 {
     let counter = 0;
-    //let counter1 = 0;
+
     for(let j = 0; j < randTabElements; j++)
     {
         
@@ -39,12 +39,11 @@ function bubbleSortArray(tab, randTabElements)
                     tab[i] = tab[i+1];
                     tab[i+1] = x;  
                     }
-            //counter1++;
+
             }
         counter++;
     }  
-    //console.log("counter: " + counter);
-    //console.log("counter1: " + counter1);
+
 }
 
 
@@ -66,7 +65,6 @@ function genPrimeNumbers(tab, max)
             tab.push(i);
         }
     }
-    //console.log("Liczby pierwsze: " + tab);
 
     return tab;
 }
@@ -74,10 +72,7 @@ function genPrimeNumbers(tab, max)
 function lookingForPrimeNumbers(baseTab, primaryNumbers, yourPrimaryNumbers)
 {
     let iterations = 0;
-    let startingElement = 0;
-    let temp = 0;
-    // const loopLenght = baseTab.length;
-    // console.log("loop " + loopLenght);
+    
     for(let j = 0; j < primaryNumbers.length ; j++)
     {
         for(i = iterations ; (i < baseTab.length) ; i++)
@@ -85,23 +80,46 @@ function lookingForPrimeNumbers(baseTab, primaryNumbers, yourPrimaryNumbers)
             if(primaryNumbers[j] === baseTab[i])
             {
                 yourPrimaryNumbers.push(baseTab[i]);
-                //startingElement = baseTab[i].length;
+                
                 break;
             }else if(baseTab[i] > primaryNumbers[j])
                     {
-                        //startingElement = baseTab[i].length;
                         break;
                     }
 
             iterations++;
-            //console.log("baseTab[i]: " + baseTab[i]);
-            //console.log("baseTab[i].lenght: " + baseTab[i].length);
-            //temp++;
         }
-        //startingElement = temp;
-        //console.log("statringElement: " +  startingElement);
-        console.log("Iteracje do znalezienia liczby pierwszej wewnątrz j:" + iterations);
+
+        //console.log("Iteracje do znalezienia liczby pierwszej wewnątrz j:" + iterations);
     }
-    console.log("Iteracje do znalezienia liczby pierwszej:" + iterations);
+    //console.log("Iteracje do znalezienia liczby pierwszej:" + iterations);
     return yourPrimaryNumbers;
 }
+
+
+
+function arithmeticalMeanFn(baseTab, nOfElements)
+{
+    let sum = 0;
+    let arithmeticalMean;
+    for(let i = 0; i < baseTab.length ; i++)
+    {
+        sum = sum + baseTab[i];
+    }
+    console.log("suma: " + sum);
+    arithmeticalMean = sum / nOfElements;
+    return arithmeticalMean;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

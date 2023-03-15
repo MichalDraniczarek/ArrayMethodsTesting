@@ -1,11 +1,12 @@
 
 
 const baseTab = [];
-const arrayMaxLenght = 20;
+const arrayMaxLenght = 10;
 const arrayMaxNumValue = 100;
 
 const arrayGenOfPrimeNumbers = [];
 const yourPrimaryNumbers = [];
+let arithmeticalMean;
 let randTabElements = randomlyGeneratedNumber(arrayMaxLenght);
 
 
@@ -23,8 +24,14 @@ console.log("wszystkie liczby: " + arrayGenOfPrimeNumbers);
 
 lookingForPrimeNumbers(baseTab, arrayGenOfPrimeNumbers,yourPrimaryNumbers);
 
-console.log("Twoje liczby pierwsze to: " + yourPrimaryNumbers);
 
+if(!yourPrimaryNumbers.length)
+{
+    console.log("W twojej tablicy nie ma liczb pierwszych.")
+}else{
+    console.log("Twoje liczby pierwsze to: " + yourPrimaryNumbers)
+}
 
-
+arithmeticalMean = arithmeticalMeanFn(baseTab, randTabElements);
+console.log("średnia: " + arithmeticalMean.toFixed(3));
 
