@@ -66,10 +66,42 @@ function genPrimeNumbers(tab, max)
             tab.push(i);
         }
     }
-    console.log("Liczby pierwsze: " + tab);
+    //console.log("Liczby pierwsze: " + tab);
 
     return tab;
 }
 
+function lookingForPrimeNumbers(baseTab, primaryNumbers, yourPrimaryNumbers)
+{
+    let iterations = 0;
+    let startingElement = 0;
+    let temp = 0;
+    // const loopLenght = baseTab.length;
+    // console.log("loop " + loopLenght);
+    for(let j = 0; j < primaryNumbers.length ; j++)
+    {
+        for(i = iterations ; (i < baseTab.length) ; i++)
+        {
+            if(primaryNumbers[j] === baseTab[i])
+            {
+                yourPrimaryNumbers.push(baseTab[i]);
+                //startingElement = baseTab[i].length;
+                break;
+            }else if(baseTab[i] > primaryNumbers[j])
+                    {
+                        //startingElement = baseTab[i].length;
+                        break;
+                    }
 
-
+            iterations++;
+            //console.log("baseTab[i]: " + baseTab[i]);
+            //console.log("baseTab[i].lenght: " + baseTab[i].length);
+            //temp++;
+        }
+        //startingElement = temp;
+        //console.log("statringElement: " +  startingElement);
+        console.log("Iteracje do znalezienia liczby pierwszej wewnątrz j:" + iterations);
+    }
+    console.log("Iteracje do znalezienia liczby pierwszej:" + iterations);
+    return yourPrimaryNumbers;
+}
